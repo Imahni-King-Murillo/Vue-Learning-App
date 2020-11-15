@@ -20,6 +20,13 @@ npm run build
 npm run lint
 ```
 
+### In order to commit and push changes to github
+```
+git add .
+git commit -m "Commit Message Here"
+git push
+```
+
 ### If something goes wrong and you can't commit or push to github...
 ```
 git add -u :/
