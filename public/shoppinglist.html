@@ -14,7 +14,7 @@
 <script type="text/javascript" src="https://unpkg.com/vue"></script>
 <div class="container">
     <div id="shopping-list">
-        <!--Header-->
+        <!--Header--><!--Test test-->
         <h1 class="text-dark title">
             {{ header ? header : 'Welcome' }}
         </h1>
@@ -34,12 +34,16 @@
             <button class="btn btn-primary mt-2" v-bind:disabled="newItem.length === 0" v-on:click="saveItem">Add Item</button>
         </div>
         <ul>
+            <!--List to show items in order from newest to oldest-->
             <li v-for="item in reversedItems"
                 v-on:click="togglePurchased(item)"
                 class="font-weight-bold hover-cursor"
                 v-bind:class="[item.purchased ? 'text-muted font-italic line-through' : '', item.highPriority ? 'text-primary' : 'text-dark']">
-                {{ item.label }}</li>
+                {{ item.label }}
+            </li>
         </ul>
+        <p v-if="items.length > 0">Number of items: {{ items.length }}</p>
+        <!--Success message-->
         <p v-if="items.length === 0">Nice! You've purchased all of your items.</p>
     </div>
 </div>
