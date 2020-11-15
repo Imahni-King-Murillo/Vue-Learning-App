@@ -20,5 +20,10 @@ npm run build
 npm run lint
 ```
 
+### If something goes wrong and you can't commit or push to github...
+```
+git add -u :/
+```
+
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
