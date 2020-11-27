@@ -35,16 +35,23 @@
     <script type="text/x-template" id="plan-outline">
         <!--div to nest the planComponent within the plan-outline-component-->
         <div class="col-12 bg-dark rounded p-2 mt-2"> 
-            <plan-component v-for="PlanComponent in planNames" v-bind:name="PlanComponent"></plan-component>
+            <plan-component 
+            v-for="PlanComponent in planNames" 
+            v-bind:name="PlanComponent" 
+            v-on:plan-selected="selectPlan"
+            v-bind:selectedPlan="selectedPlan"></plan-component>
         </div>
     </script>
 
     <!--Plan X-template-->
     <script type="text/x-template" id="plan-template">
         <!--div to hold planComponent name within a blue box-->
-        <div class="card col-3 bg-primary text-white mt-2">
-            <h5>{{ name }}</h5>
-        </div>
+        <button 
+        v-on:click="select" 
+        class="card col-3 bg-primary text-white mt-2"
+        v-bind:class="[isSelected ? 'bg-success' : '']">
+            {{ name }}
+        </button>
     </script>
 
 </div>
@@ -54,6 +61,6 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
 <script src="https://unpkg.com/vue"></script>        
-<script src="app.js"></script>
+<script src="coffee.js"></script>
 </body>
 </html>

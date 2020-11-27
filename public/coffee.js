@@ -37,6 +37,19 @@ let PlanComponent = {
             // is required
             required: true,
         },
+        selectedPlan: {
+            type: String,
+        }
+    },
+    methods: {
+        select() {
+            this.$emit('plan-selected', this.name)
+        }
+    },
+    computed: {
+        isSelected() {
+            return this.name === this.selectedPlan
+        }
     }
 }
 
@@ -54,8 +67,14 @@ let PlanOutlineComponent = {
         return {
             // an array of plan names 
             planNames: ['The Teacher', 'The Single', 'The Hacker'],
+            selectedPlan: null
         }
     },
+    methods: {
+        selectPlan(PlanComponent) {
+            this.selectedPlan = PlanComponent
+        }
+    }
 }
 
 // Vue element in focus for coffeeplans.html
