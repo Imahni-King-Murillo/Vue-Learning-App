@@ -31,7 +31,8 @@ let PageLinkList = {
             pageNames: [
                 'shoppinglist.html',
                 'coffeeplans.html',
-                'slots.html'
+                'slots.html',
+                'boilerplate.html'
             ]
         }
     } // end of data

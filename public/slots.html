@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <meta charset="utf-8">
+    <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <link rel="icon" href="img/vue-icon.png">
@@ -13,6 +13,59 @@
     <body>
         <div id="slots">
             <h1 class="border-bottom">Vue Slots Fundamentals</h1>
+            <!--todo-item component-->
+            <todo-item>
+                <!--'item' slot-->
+                <template v-slot:item>
+                    <p>
+                        Buy Bananas
+                    </p>
+                </template>
+                <!--'description' slot-->
+                <template v-slot:description>
+                    <p>
+                        These are for eating!
+                    </p>
+                </template>
+                <!--'button-text' slot-->
+                <template v-slot:button-text>
+                    Bananas!
+                </template>
+            </todo-item>
+
+            <!--todo-item component-->
+            <todo-item>
+                <!--Item slot-->
+                <template v-slot:item>
+                    <p>
+                        Bark Treats
+                    </p>
+                </template>
+                <!--'description' slot-->
+                <template v-slot:description>
+                    <p>
+                        Silly treats for the pup!
+                    </p>
+                </template>
+            </todo-item>
+
+            <!--todo-item compnent x-template-->
+            <script type="text/x-template" id="todo-template">
+                <div>
+                    <input type="checkbox" v-model="completed"> 
+                    <span v-bind:class="[completed ? 'text-success' : '']">
+                        <slot name="item"></slot>
+                    </span>
+                    <span v-bind:class="[completed ? 'text-primary' : '']">
+                        <slot name="description"></slot>
+                    </span>    
+                    <button v-bind:class="[completed ? 'btn btn-outline-success' : 'btn btn-outline-primary']">
+                        <slot name="button-text">
+                            Purchase
+                        </slot>
+                    </button>
+                </div>
+            </script>
         </div>
 
 
