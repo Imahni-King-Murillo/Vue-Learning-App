@@ -32,7 +32,8 @@ let PageLinkList = {
                 'shoppinglist.html',
                 'coffeeplans.html',
                 'slots.html',
-                'boilerplate.html'
+                'boilerplate.html',
+                'notification-center.html'
             ]
         }
     } // end of data
