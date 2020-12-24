@@ -33,7 +33,8 @@ let PageLinkList = {
                 'coffeeplans.html',
                 'slots.html',
                 'boilerplate.html',
-                'notification-center.html'
+                'notification-center.html',
+                'practice-project-1.html'
             ]
         }
     } // end of data
